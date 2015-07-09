@@ -84,7 +84,7 @@ a {
   bottom: 48px;
   left: 48px;
   z-index: 999;
-  /*background-color: #333;*/
+ /* background-color: #333;*/
 }
 
 /* -----------------------------------------------------------------------------
@@ -138,6 +138,40 @@ a {
   height: 48px;
   background-color: rgb(255, 40, 100);
   border-radius: 100%;
+  -webkit-transition: -webkit-transform 0.5s;
+  -moz-transition: -moz-transform 0.5s;
+  transition: transform 0.5s;
+}
+
+.icon:hover {
+  -webkit-transform: rotate(360deg);
+  -moz-transform: rotate(360deg);
+  transform: rotate(360deg);
+}
+
+.icon-robo1 {
+  background-image: url('img/icons/robo1.svg');
+  background-position: 0 0;
+}
+
+.icon-robo2 {
+  background-image: url('img/icons/robo2.svg');
+  background-position: 0 0;
+}
+
+.icon-banana {
+  background-image: url('img/icons/banana.svg');
+  background-position: 0 0;
+}
+
+.icon-line-up {
+  background-image: url('img/icons/line.svg');
+  background-position: 0 0;
+}
+
+.icon-evolution {
+  background-image: url('img/icons/fire.svg');
+  background-position: 0 0;
 }
 
 .icon-audio {
@@ -159,6 +193,7 @@ a {
   position: absolute;
   bottom: 0;
   left: 0;
+  z-index: 9999;
   width: 306px;
   height: 317px;
   background: url('img/dj.gif') top left no-repeat;
@@ -183,16 +218,135 @@ a {
 ----------------------------------------------------------------------------- */
 
 .dancer {
+  display: block;
   position: absolute;
-  width: 48px;
-  height: 48px;
-  background-color: #fff;
+  -webkit-transition: top 1s cubic-bezier(.17,.67,.6,1.62), left 1s cubic-bezier(.17,.67,.6,1.62), bottom 1s cubic-bezier(.17,.67,.6,1.62);
+  -moz-transition: top 1s cubic-bezier(.17,.67,.6,1.62), left 1s cubic-bezier(.17,.67,.6,1.62), bottom 1s cubic-bezier(.17,.67,.6,1.62);
+  transition: top 1s cubic-bezier(.17,.67,.6,1.62), left 1s cubic-bezier(.17,.67,.6,1.62), bottom 1s cubic-bezier(.17,.67,.6,1.62);
 }
 
-.dancer-michael {
-  background-color: #333;
+.dancer-robo1 {
+  width: 180px;
+  height: 180px;
+  background-image: url('img/dancers/robo1.gif');
 }
 
-.dancer-justin {
-  background-image: urls('img/dancers/justin.gif');
+.dancer-robo2 {
+  width: 180px;
+  height: 188px;
+  background-image: url('img/dancers/robo2.gif');
+}
+
+.dancer-banana {
+  width: 180px;
+  height: 178px;
+  background-image: url('img/dancers/banana.gif');
+}
+
+.dancer-banana--marcus {
+  width: 158px;
+  height: 219px;
+  background-image: url('img/dancers/marcus.gif');
+}
+
+/* -----------------------------------------------------------------------------
+
+  DANCE MOVES!
+  
+----------------------------------------------------------------------------- */
+
+/**
+ * Dance left
+ */
+
+.dance-left {
+  -webkit-animation: danceLeft 8s 2s linear;
+  animation: danceLeft 8s 2s linear infinite;
+}
+
+@keyframes danceLeft {
+  0% {
+    transform: translateX(0px) translateY(0px);
+  }
+  25% {
+    transform: translateX(-200px) translateY(0px);
+  }
+  50% {
+    transform: translateX(0px) translateY(0px);
+  }
+  51% {
+    transform: translateX(0px) translateY(0px);
+  }
+  75% {
+    transform: translateX(0px) translateY(-200px);
+  }
+  100% {
+    transform: translateX(0px) translateY(0px);
+  }
+}
+
+@keyframes danceLeft {
+  0% {
+    -webkit-transform: translateX(0px) translateY(0px);
+  }
+  25% {
+    -webkit-transform: translateX(-200px) translateY(0px);
+  }
+  50% {
+    -webkit-transform: translateX(0px) translateY(0px);
+  }
+  75% {
+    -webkit-transform: translateX(0px) translateY(-200px);
+  }
+  100% {
+    -webkit-transform: translateX(0px) translateY(0px);
+  }
+}
+
+/**
+ * Dance right
+ */
+
+.dance-right {
+  -webkit-animation: danceRight 8s 2s linear;
+  animation: danceRight 8s 2s linear infinite;
+}
+
+@keyframes danceRight {
+  0% {
+    transform: translateX(0px) translateY(0px);
+  }
+  25% {
+    transform: translateX(200px) translateY(0px);
+  }
+  50% {
+    transform: translateX(0px) translateY(0px);
+  }
+  51% {
+    transform: translateX(0px) translateY(0px);
+  }
+  75% {
+    transform: translateX(0px) translateY(200px);
+  }
+  100% {
+    transform: translateX(0px) translateY(0px);
+  }
+}
+
+@keyframes danceRight {
+  0% {
+    -webkit-transform: translateX(0px) translateY(0px);
+  }
+  25% {
+    -webkit-transform: translateX(200px) translateY(0px);
+  }
+  50% {
+    -webkit-transform: translateX(0px) translateY(0px);
+  }
+  75% {
+    -webkit-transform: translateX(0px) translateY(200px);
+  }
+  100% {
+    -webkit-transform: translateX(0px) translateY(0px);
+  }
 }
