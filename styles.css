@@ -192,3 +192,7 @@ a {
 .dancer-michael {
   background-color: #333;
 }
+
+.dancer-justin {
+  background-image: urls('img/dancers/justin.gif');
+}
