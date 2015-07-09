@@ -1,132 +1,158 @@
+/* -----------------------------------------------------------------------------
+
+  BOX SIZING RESET
+  
+----------------------------------------------------------------------------- */
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+html {
+  box-sizing: border-box;
+}
+
+/* -----------------------------------------------------------------------------
+
+  ROOT
+  
+----------------------------------------------------------------------------- */
+
 body,
 html {
-  font-family: 'Helvetica', sans-serif;
-  font-size: 14px;
-  font-weight: 300;
-  height: 100%;
   overflow: hidden;
+  width: 100%;
+  height: 100%;
 }
 
 body {
   margin: 0px;
-  background-color: #222;
+  background: url('img/bg.gif') bottom right no-repeat;
+  background-color: rgb(10, 10, 10);
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  font-family: 'Helvetica', sans-serif;
+  font-size: 14px;
+  font-weight: 300;
 }
+
+/* -----------------------------------------------------------------------------
+
+  LINKS
+  
+----------------------------------------------------------------------------- */
 
 a {
   text-decoration: none;
 }
 
-a:link,
-a:visited,
-a:active {
-  color: rgb(40, 170, 200);
+/* -----------------------------------------------------------------------------
+
+  LAYOUT
+  
+----------------------------------------------------------------------------- */
+
+.container {
+  margin: 0 auto;
+  min-width: 600px;
+  padding: 0 24px;
 }
 
-a:hover {
-  color: #fff;
-  background-color: rgb(40, 170, 220);
+/* -----------------------------------------------------------------------------
+
+  HEADER
+  
+----------------------------------------------------------------------------- */
+
+.header {
+  margin: 0;
+  padding: 0;
 }
 
-.title,
-.addDancerButton {
-  padding: 5px 12px;
-  float: right;
-}
+/* -----------------------------------------------------------------------------
 
-.topbar {
-  background-color: #444;
-  overflow: auto;
-}
+  NAVIGATION
+  
+----------------------------------------------------------------------------- */
 
-.title {
-  color: #555;
+.nav {
+  position: relative;
+  margin: 0 auto;
+  width: 480px;
+  padding: 12px 0;
   background-color: #fff;
-  font-weight: 700;
+  border-radius: 0 0 24px 24px;
 }
 
-.dancer {
+.nav-items {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  text-align: center;
+}
+
+.nav-item {
+  display: inline-block;
+  vertical-align: middle;
+  margin: 0 4px;
+  width: 48px;
+  height: 48px;
+}
+
+.nav-link {
+  display: block;
+  overflow: hidden;
+  margin: 0;
+  width: 100%;
+  height: 100%;
+  font-size: 0;
+  text-indent: -9999px;
+}
+
+/* -----------------------------------------------------------------------------
+
+  ICONS
+  
+----------------------------------------------------------------------------- */
+
+.icon {
+  display: block;
+  width: 48px;
+  height: 48px;
+  background-color: rgb(255, 40, 100);
+  border-radius: 100%;
+}
+
+.icon-audio {
+  background: url('img/icons/audio.svg');
+  background-position: 0 0;
+}
+
+.icon-audio--mute {
+  background-position: -48px 0;
+}
+
+/* -----------------------------------------------------------------------------
+
+  DAFT PUNK
+  
+----------------------------------------------------------------------------- */
+
+.dp {
   position: absolute;
-  background-color: rgb(255, 50, 50);
-  width: 25px;
-  height: 25px;
-  border-radius: 50%;
-}
-
-.dancer-big {
-  -webkit-transform: scale(2);
-  -moz-transform: scale(2);
-  transform: scale(2);
-}
-
-.love {
-  position: absolute;
-  width: 45px;
-  height: 40px;
-  -webkit-animation: spin 0.3s infinite linear;
-  -moz-animation: spin 0.3s infinite linear;
-  animation: spin 1s infinite linear;
-}
-
-.love::before,
-.love::after {
-  position: absolute;
-  content: "";
-  left: 50px;
-  top: 0;
-  width: 50px;
-  height: 80px;
-  background: rgb(255, 50, 150);
-  -moz-border-radius: 50px 50px 0 0;
-  border-radius: 50px 50px 0 0;
-  -webkit-transform: rotate(-45deg);
-     -moz-transform: rotate(-45deg);
-      -ms-transform: rotate(-45deg);
-       -o-transform: rotate(-45deg);
-          transform: rotate(-45deg);
-  -webkit-transform-origin: 0 100%;
-     -moz-transform-origin: 0 100%;
-      -ms-transform-origin: 0 100%;
-       -o-transform-origin: 0 100%;
-          transform-origin: 0 100%;
-}
-
-.love::after {
+  bottom: 0;
   left: 0;
-  -webkit-transform: rotate(45deg);
-     -moz-transform: rotate(45deg);
-      -ms-transform: rotate(45deg);
-       -o-transform: rotate(45deg);
-          transform: rotate(45deg);
-  -webkit-transform-origin: 100% 100%;
-     -moz-transform-origin: 100% 100%;
-      -ms-transform-origin: 100% 100%;
-       -o-transform-origin: 100% 100%;
-          transform-origin :100% 100%;
+  width: 323px;
+  height: 236px;
+  background: url('img/dp.gif') top left no-repeat;
 }
 
-@-webkit-keyframes spin {
-  0% {
-    -webkit-transform: rotate(0deg);
-  }
-  100% {
-    -webkit-transform: rotate(360deg);
-  }
-}
-
-@-moz-keyframes spin {
-  0% {
-    -moz-transform: rotate(0deg);
-  }
-  100% {
-    -moz-transform: rotate(360deg);
-  }
-}
-
-@keyframes spin {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(360deg);
-  }
+.dp-audio {
+  position: absolute;
+  bottom: 0;
+  right: 0;
 }

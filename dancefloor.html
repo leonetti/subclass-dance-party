@@ -1,21 +1,31 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Object Dance Party</title>
-    <link rel="stylesheet" type="text/css" href="styles.css" />
-    <script src="lib/jquery.js"></script>
-    <script src="src/dancer.js"></script>
-    <script src="src/blinkyDancer.js"></script>
-    <script src="src/biggyDancer.js"></script>
-    <script src="src/iLoveYouDancer.js"></script>
-  </head>
-  <body>
-    <div class="topbar">
-      <span class="title">object dance party</span>
-      <a href="#" class="addDancerButton" data-dancer-maker-function-name="makeBlinkyDancer">add a blinky dancer</a>
-      <a href="#" class="addDancerButton" data-dancer-maker-function-name="makeBiggyDancer">add a biggy dancer</a>
-      <a href="#" class="addDancerButton" data-dancer-maker-function-name="iLoveYouDancer">add a love dancer</a>
-    </div>
-    <script src="src/init.js"></script>
-  </body>
+<head>
+  <title>Object Dance Party</title>
+  <link rel="stylesheet" type="text/css" href="styles.css" />
+  <script src="lib/jquery.js"></script>
+  <script src="src/audio.js"></script>
+  <script src="src/init.js"></script>
+</head>
+<body>
+
+<header class="header">
+  <div class="container">
+    <nav class="nav">
+      <ul class="nav-items">
+        <li class="nav-item"><a href="#" class="nav-link icon">Michael Jackson</a></li>
+        <li class="nav-item"><a href="#" class="nav-link icon">Justin Timberlake</a></li>
+        <li class="nav-item"><a href="#" class="nav-link icon">Miley Cyrus</a></li>
+        <li class="nav-item"><a href="#" class="nav-link icon">Line Up</a></li>
+        <li class="nav-item"><a href="#" class="nav-link icon">Dance Evolution</a></li>
+        <li class="nav-item"><a href="#" class="nav-link icon icon-audio">Music</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<div class="dp"></div>
+<audio class="dp-audio" src="media/track.mp3" loop></audio>
+
+</body>
 </html>
