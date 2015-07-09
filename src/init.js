@@ -1,34 +1,25 @@
 $(document).ready(function(){
+  // Global window.dancers array
   window.dancers = [];
 
-  $(".addDancerButton").on("click", function(event){
-    var dancerMakerFunctionName = $(this).data("dancer-maker-function-name");
-    var dancerMakerFunction = window[dancerMakerFunctionName];
+  // Adds a dancer to the screen on click
+  $(".add-dancer").on("click", function(event){
+    // Get dancer function name from the data attribute
+    var dancerFunctionName = $(this).data("dance-function");
 
+    // Fetch the maker function from the window object based on the dancer
+    // function name.
+    var dancerMakerFunction = window[dancerFunctionName];
+
+    // Now make a new dancer instance based on the data attribute/maker function
+    // defined above.
     var dancer = new dancerMakerFunction(
       $("body").height() * Math.random(),
-      $("body").width() * Math.random(),
-      Math.random() * 1000
+      $("body").width() * Math.random()
     );
-    $('body').append(dancer.$node);
+
+    $('.main').append(dancer.$node);
 
     dancers.push(dancer);
-  });
-
-  $('.line-up').on('click', function(e) {
-    e.preventDefault();
-    var numDancers = dancers.length;
-    var space = 100/numDancers;
-    var start = 0;
-
-    $(dancers).each(function(index, el) {
-      var node = el.$node;
-      start = start + space;
-      console.log(start);
-      node.css({
-        'top': '50%',
-        'left': start + '%'
-      });
-    });
   });
 });

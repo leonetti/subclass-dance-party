@@ -29,12 +29,9 @@ html {
 
 body {
   margin: 0px;
-  background: url('img/bg.gif') bottom right no-repeat;
-  background-color: rgb(10, 10, 10);
-  background-position: 50% 50%;
+  background: url('img/bg-alt.gif') bottom left no-repeat;
   background-repeat: no-repeat;
-  background-attachment: fixed;
-  background-size: cover;
+  background-color: rgb(10, 10, 10);
   font-family: 'Helvetica', sans-serif;
   font-size: 14px;
   font-weight: 300;
@@ -75,16 +72,32 @@ a {
 
 /* -----------------------------------------------------------------------------
 
+  MAIN
+  
+----------------------------------------------------------------------------- */
+
+.main {
+  display: block;
+  position: absolute;
+  top: 72px;
+  right: 48px;
+  bottom: 48px;
+  left: 48px;
+  z-index: 999;
+  /*background-color: #333;*/
+}
+
+/* -----------------------------------------------------------------------------
+
   NAVIGATION
   
 ----------------------------------------------------------------------------- */
 
 .nav {
   position: relative;
+  z-index: 9999;
   margin: 0 auto;
-  width: 480px;
   padding: 12px 0;
-  background-color: #fff;
   border-radius: 0 0 24px 24px;
 }
 
@@ -128,7 +141,7 @@ a {
 }
 
 .icon-audio {
-  background: url('img/icons/audio.svg');
+  background-image: url('img/icons/audio.svg');
   background-position: 0 0;
 }
 
@@ -138,21 +151,44 @@ a {
 
 /* -----------------------------------------------------------------------------
 
-  DAFT PUNK
+  DJ
   
 ----------------------------------------------------------------------------- */
 
-.dp {
+.dj {
   position: absolute;
   bottom: 0;
   left: 0;
-  width: 323px;
-  height: 236px;
-  background: url('img/dp.gif') top left no-repeat;
+  width: 306px;
+  height: 317px;
+  background: url('img/dj.gif') top left no-repeat;
 }
+
+/* -----------------------------------------------------------------------------
+
+  DAFT PUNK AUDIO
+  
+----------------------------------------------------------------------------- */
 
 .dp-audio {
   position: absolute;
   bottom: 0;
   right: 0;
+}
+
+/* -----------------------------------------------------------------------------
+
+  DANCERS
+  
+----------------------------------------------------------------------------- */
+
+.dancer {
+  position: absolute;
+  width: 48px;
+  height: 48px;
+  background-color: #fff;
+}
+
+.dancer-michael {
+  background-color: #333;
 }
